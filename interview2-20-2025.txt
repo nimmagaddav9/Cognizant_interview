@@ -1,0 +1,179 @@
+Cognizant interview 
+
+react.js questions
+---------------------- 
+
+1. Have you used React custom hook? 
+
+Yes, I have used React custom hooks. Custom hooks in React allow you to extract and reuse stateful logic across multiple components, 
+which helps in keeping components clean and more maintainable. 
+They follow the same naming convention as built-in hooks (starting with "use"), and they allow you to share logic without repeating code.
+
+For example, I’ve created custom hooks like useFetch for handling API requests or useForm to manage form state.
+
+useResize custom hook with different screens. breakpoint occur return screen size 1400 px Screensize mobile and desktop.
+
+useMediaQuery:
+Enables components to adapt to different screen sizes or devices by conditionally rendering content based on media queries.
+
+
+2. event loop?
+
+The event loop in React, as in all JavaScript environments, manages asynchronous operations, ensuring the UI remains responsive. 
+It continuously monitors the call stack and the task queue.
+When the call stack is empty, the event loop takes the first task from the queue and places it onto the call stack for execution.
+
+3. which version of react? v18
+
+4. CSS Grid vs Flex
+In CSS, "Grid" refers to the CSS Grid Layout, which allows for two-dimensional positioning of elements by creating a grid with rows and columns, 
+while "Flex" refers to Flexbox, a layout system designed for one-dimensional alignment, meaning you can arrange elements in either a row or a column only; 
+
+5. How to optimization performance in HTML?
+
+To optimize HTML performance, 
+1. focus on minimizing file size by minifying code, 
+2. optimizing images, 
+3. leveraging browser caching, 
+4. using a Content Delivery Network (CDN), 
+5. deferring JavaScript loading, and 
+6. ensuring semantic and valid HTML markup
+
+6. coding question:
+
+https://dummyjson.com/docs/users
+
+show FName, LastName, Age
+
+users.tsx
+
+
+import react from "react";
+
+const Users = ({ firstName, lastName, age }) => {
+  return (
+    <div className="user-card">
+      <p>{firstName}</p>
+      <p>{lastName}</p>
+      <p>{age}</p>
+    </div>
+  );
+};
+
+export default Users;
+
+app.tsx
+import { useEffect, useState } from "react";
+import "./styles.css";
+import Users from "./Users";
+
+export default function App() {
+  const [users, setUsers] = useState([]);
+
+  const fetchApi = (url) => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setUsers(data.users);
+      });
+  };
+  useEffect(() => {
+    fetchApi("https://dummyjson.com/users");
+  }, []);
+
+  return (
+    <div className="App">
+      <h1>Hello CodeSandbox</h1>
+      <h2>Start editing to see some magic happen!</h2>
+      {users.length && users.map((props) => <Users {...props} />)}
+    </div>
+  );
+}
+
+6. Middleware used? Redux, redux-thunk, redux-saga
+
+
+
+====================================================================================
+
+node.js questions
+------------------------------------------
+1. Can you write SQL Query for 2 tables, 
+
+student table --> id, name
+
+table 2:--> table for change, contains id, studentid 
+
+
+join the table 1, 2 and fetch the name
+
+Status : 1 fetch only those
+
+
+innerjoin--> where clause
+
+
+
+Output: To join these two tables and fetch the name from the student table using the studentid from the second table (let's call it change), you can use an INNER JOIN like this:
+
+SELECT s.name
+FROM student s
+JOIN change c ON s.id = c.studentid;
+
+
+============================
+
+1. What is ExpressJS? Express is a flexible Node.js web application framework that provides a wide set of features to develop web and mobile applications
+
+2. What is an Event Loop in Node.js?
+Event loops handle asynchronous callbacks in Node.js. 
+It is the foundation of Node.js's non-blocking input/output in Node.js, making it one of the most important environmental features.
+
+3. For Node.js, why does Google use the V8 engine?
+The V8 engine, developed by Google, is open-source and written in C++. Google Chrome makes use of this engine. 
+V8, unlike the other engines, is also utilized for the popular Node.js runtime. 
+V8 was initially intended to improve the speed of JavaScript execution within web browsers. 
+Instead of employing an interpreter, V8 converts JavaScript code into more efficient machine code to increase performance. 
+It turns JavaScript code into machine code during execution by utilizing a JIT (Just-In-Time) compiler, as do many current JavaScript
+engines such as SpiderMonkey or Rhino (Mozilla).
+
+
+Describe Node.js exit codes?
+
+Node.js exit codes are numerical values that a Node.js process returns to the operating system upon completion. 
+These codes signal whether the process completed successfully or encountered an error.
+
+0:
+Success. Indicates that the program executed without errors.
+1:
+Uncaught Fatal Exception. Signifies that an uncaught exception occurred and was not handled by a try...catch block or an uncaughtException event handler.
+2:
+Unused (Reserved by Bash). This code is reserved for misuse of shell built-ins in Bash.
+3:
+Internal JavaScript Parse Error. Occurs when the JavaScript source code within Node.js's bootstrapping process encounters a parsing error. This is rare and typically happens during Node.js development.
+>4:
+User-defined errors. Codes above 4 can be used to indicate custom error conditions within an application.
+
+object function
+
+inheritance
+
+
+
+
+
+
+
+
+accessbility
+
+security react vs javascript
+
+
+
+ vs React.js
+
+
+
+

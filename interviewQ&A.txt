@@ -224,3 +224,23 @@ This helps separate concerns and makes both the component and the hook more reus
 9. Update Component Naming and Structure:
 
 "Finally, I would ensure that each smaller component is clearly named and has a single responsibility. For example, a component for rendering form inputs might be called FormInput, while a component handling button functionality could be SubmitButton. These names make the component's intent clear, improving readability."
+
+
+
+
+20. What are synthetic events
+A cross-browser wrapper around the browser’s native event. 
+It has the same interface as the browser’s native event, including stopPropagation() and preventDefault(), 
+except the events work identically across all browsers.
+
+21. validation in react.js?
+In React.js, validation refers to ensuring that the data entered by a user is in the correct format and meets any
+predefined requirements before being submitted or processed. 
+This is an essential part of creating user-friendly and error-free applications.
+
+22. unit testing in react.js?
+Test library - JEST, Enzyme.
+
+23.  How do you handle form validation in React?
+State-based Validation: React uses state to store the value of input fields and any validation errors. 
+You can use useState (for functional components) or this.setState (for class components) to track the values and errors.
